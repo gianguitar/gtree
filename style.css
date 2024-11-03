@@ -28,8 +28,8 @@ body {
     width: 250px;
     height: 250px;
     display: block;
-    margin: 200px auto 180px;
-    border-radius: 50%;
+    margin: 40px auto 20px;
+    border-radius: 80%;
     -webkit-tap-highlight-color: transparent;
 }
 
