@@ -67,5 +67,96 @@
     <div id="hashtag">
       #Guitarist🎸 #Songwriter🎵 #Singer🎤 #Producer🎧 #ContentCreator🎥
     </div>
+
+<!-- Include EmailJS script -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    // Initialize EmailJS with your User ID
+    emailjs.init("YOUR_USER_ID");
+  })();
+
+  function sendEmail(event) {
+    event.preventDefault();
+    
+    // Send the email using the form data
+    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", event.target)
+      .then((response) => {
+        alert("Message sent successfully!");
+        console.log("Success!", response.status, response.text);
+      })
+      .catch((error) => {
+        alert("Oops! Something went wrong.");
+        console.error("Error:", error);
+      });
+  }
+</script>
+
+<!-- Contact Form HTML -->
+<div class="contact-form">
+  <h2>Contact Me</h2>
+  <form onsubmit="sendEmail(event)">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+    </div>
+    <div class="form-group">
+      <button type="submit">Send Message</button>
+    </div>
+  </form>
+</div>
+
+<!-- Optional CSS to Style the Form -->
+<style>
+  .contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  .contact-form h2 {
+    text-align: center;
+    color: #333;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .form-group button {
+    width: 100%;
+    padding: 0.7rem;
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .form-group button:hover {
+    background-color: #45a049;
+  }
+</style>
+    
   </body>
 </html>
