@@ -73,14 +73,14 @@
 <script>
   (function() {
     // Initialize EmailJS with your User ID
-    emailjs.init("YOUR_USER_ID");
+    emailjs.init("--IK5lYF1KyN3Xy--");
   })();
 
   function sendEmail(event) {
     event.preventDefault();
     
     // Send the email using the form data
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", event.target)
+    emailjs.sendForm("service_q7y4dyi", "template_jztygin", event.target)
       .then((response) => {
         alert("Message sent successfully!");
         console.log("Success!", response.status, response.text);
